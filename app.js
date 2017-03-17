@@ -14,7 +14,7 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/jwt-template');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var posts = require('./routes/posts');
-var posts = require('./routes/comments');
+var comments = require('./routes/comments');
 
 var app = express();
 
@@ -44,7 +44,7 @@ app.use(jwt({
     }
     return null;  
   }
-}).unless({path: ['/', '/login', '/sign-up']}));
+}).unless({path: ['/', '/login', '/sign-up', '/posts']}));
 
 app.use('/', routes);
 app.use('/users', users);

@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var Post = require('../models/post');
 
-// POSTS
+// PETS
 router.get('/', function(req, res, next) {
   Post.find().sort('-createdAt').exec(function (err, posts) {
 
@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
   });
 });
 
-// POSTS SHOW
+// PETS SHOW
 router.get('/:id', function(req, res, next) {
   Post.findById(req.params.id).populate('comments').exec(function (err, post) {
 

@@ -7,7 +7,8 @@ var PostSchema = new Schema({
     createdAt       : { type: Date }
   , updatedAt       : { type: Date }
 
-  , title           : { type: String, required: true }
+  , name            : { type: String, required: true }
+  , species         : { type: String }
   , description     : { type: String }
   , comments        : [{ type: Schema.ObjectId, ref: "Comment"}]
 });

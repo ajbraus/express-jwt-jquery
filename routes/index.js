@@ -49,7 +49,7 @@ router.post('/sign-up', function(req, res, next) {
 
     var token = jwt.sign({ _id: user._id }, 'shhhhhhared-secret');
 
-    res.send(token);
+    res.send({ token: token });
   })
 });
 

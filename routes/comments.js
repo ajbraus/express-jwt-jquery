@@ -1,9 +1,10 @@
 var express = require('express');
 var router = express.Router();
 var Comment = require('../models/comment');
+var Post = require('../models/post');
 
-// CREATE POST
-router.comment('/', function(req, res, next) {
+// CREATE COMMENT
+router.post('/', function(req, res, next) {
   Post.findById(req.params.postId).exec(function (err, post) {
     var comment = new Comment(req.body);
 
